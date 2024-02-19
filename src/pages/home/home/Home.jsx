@@ -1,8 +1,11 @@
+import TechTrends from "../techTrends/TechTrends"
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className="p-20">
+      <TechTrends/>
+    </div>
   )
 }
 

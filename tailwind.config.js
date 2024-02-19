@@ -9,8 +9,9 @@ export default {
       colors: {
         clifford: '#da373d',
         btnColor: "#ff6347",
-        hoverColor: "#ff4500",
+        cardColor: "#72CA99",
         textColor: "#4b4f4f",
+        cardTextColor: "#040A10",
         priColor:"#969EA6"
 
 
