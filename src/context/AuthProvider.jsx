@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
+import PropTypes from "prop-types";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -44,10 +45,9 @@ const AuthProvider = ({ children }) => {
   const postLocalDataInDB = (email) => {
     console.log(email);
 
-
     localData?.forEach((obj) => {
       const id = obj.cartId;
-      obj.email = email
+      obj.email = email;
       delete obj.cartId;
       delete obj.available_number;
       delete obj.feedback;
@@ -88,4 +88,7 @@ const AuthProvider = ({ children }) => {
   return <Context.Provider value={contextData}>{children}</Context.Provider>;
 };
 
+AuthProvider.propTypes = {
+  children: PropTypes.node,
+};
 export default AuthProvider;

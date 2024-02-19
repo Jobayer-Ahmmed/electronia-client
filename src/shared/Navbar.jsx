@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { CgMenuCake } from "react-icons/cg";
 import { RxCross2 } from "react-icons/rx";
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import { Context } from "../context/AuthProvider";
 import { TiShoppingCart } from "react-icons/ti";
 import useCartData from "../hooks/useCartData/useCartData";
