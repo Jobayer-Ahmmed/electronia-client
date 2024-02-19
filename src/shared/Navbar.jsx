@@ -38,7 +38,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="text-textColor relative lg:px-20 px-[10%] flex items-center justify-between  w-full h-16  z-50 ">
+    <div className="relative text-textColor lg:px-20 px-[10%] flex items-center justify-between  w-full h-16  z-50 ">
       <div className=" flex items-center gap-5">
         <div className="block lg:hidden">
           {toggle ? (
@@ -55,12 +55,14 @@ const Navbar = () => {
       </div>
       <div>
         <ul
-          className={` z-10 absolute left-5 lg:hidden  flex flex-col gap-5 rounded text-center p-10 text-xl font-medium ${
+          className={`bg-cardColor z-10 absolute top-16 lg:hidden  flex flex-col gap-5 rounded text-center p-10 text-xl font-medium ${
             toggle
-              ? " -left-60  top-16 transition-[0.9]"
-              : " left-3 top-16 transition-[0.7]"
+              ? " -left-60 transition-[0.9] "
+              : "left-3 top-16 transition-[0.7]"
           }`}
         >
+         
+          
           {navlinks}
         </ul>
         <div className=" flex items-center  py-5 relative ">

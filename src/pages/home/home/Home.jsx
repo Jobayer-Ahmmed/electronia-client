@@ -1,9 +1,11 @@
+import Slider from "../hero/Slider"
 import TechTrends from "../techTrends/TechTrends"
 
 
 const Home = () => {
   return (
-    <div className="p-20">
+    <div className="">
+      <Slider/>
       <TechTrends/>
     </div>
   )
