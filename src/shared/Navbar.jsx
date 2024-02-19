@@ -26,39 +26,39 @@ const Navbar = () => {
 
   const navlinks = (
     <>
-      <li>
+      <li className="text-textColor">
         <NavLink>Home</NavLink>
       </li>
-      <li>
+      <li className="text-textColor">
         <NavLink to="/login">Login</NavLink>
       </li>
-      <li>
+      <li className="text-textColor">
         <NavLink to="/register">Register</NavLink>
       </li>
     </>
   );
   return (
-    <div className="lg:px-20 px-[10%] flex items-center justify-between  w-full h-16 text-white  z-50 ">
+    <div className="text-textColor relative lg:px-20 px-[10%] flex items-center justify-between  w-full h-16  z-50 ">
       <div className=" flex items-center gap-5">
         <div className="block lg:hidden">
           {toggle ? (
             <button onClick={() => setToggle(!toggle)} className="">
-              <ImMenu className="text-3xl" />
+              <ImMenu className="text-2xl" />
             </button>
           ) : (
             <button onClick={() => setToggle(!toggle)} className="">
-              <ImCross className="text-3xl" />
+              <ImCross className="text-2xl" />
             </button>
           )}
         </div>
-        <span><p>Here will be logo</p></span>
+        <span><p> logo</p></span>
       </div>
       <div>
         <ul
-          className={` z-10 absolute left-5  flex flex-col gap-5 rounded text-center p-10 text-xl font-medium ${
+          className={` z-10 absolute left-5 lg:hidden  flex flex-col gap-5 rounded text-center p-10 text-xl font-medium ${
             toggle
-              ? "absolute -left-96 top-16 transition-[0.9]"
-              : "  top-16 transition-[0.7]"
+              ? " -left-60  top-16 transition-[0.9]"
+              : " left-3 top-16 transition-[0.7]"
           }`}
         >
           {navlinks}
