@@ -2,6 +2,7 @@ import Discount from "../discount/Discount";
 import Slider from "../hero/Slider";
 import KitchenGadgets from "../kitchenGadgets/KitchenGadgets";
 import Laptop from "../laptop/Laptop";
+import Phone from "../phone/Phone";
 import TechTrends from "../techTrends/TechTrends";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <Discount />
         <TechTrends />
         <Laptop/>
+        <Phone/>
         <KitchenGadgets/>
       </div>
     </div>
