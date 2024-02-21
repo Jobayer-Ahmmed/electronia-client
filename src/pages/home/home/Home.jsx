@@ -1,3 +1,4 @@
+import AC from "../ac/AC";
 import Discount from "../discount/Discount";
 import Slider from "../hero/Slider";
 import KitchenGadgets from "../kitchenGadgets/KitchenGadgets";
@@ -17,6 +18,7 @@ const Home = () => {
         <Phone/>
         <KitchenGadgets/>
         <Refrigerator/>
+        <AC/>
       </div>
     </div>
   );
