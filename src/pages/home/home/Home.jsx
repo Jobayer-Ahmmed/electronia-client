@@ -1,5 +1,6 @@
 import AC from "../ac/AC";
 import Discount from "../discount/Discount";
+import Feedback from "../feedback/Feedback";
 import Slider from "../hero/Slider";
 import KitchenGadgets from "../kitchenGadgets/KitchenGadgets";
 import Laptop from "../laptop/Laptop";
@@ -21,6 +22,7 @@ const Home = () => {
         <Refrigerator/>
         <AC/>
         <MonitorTV/>
+        <Feedback/>
       </div>
     </div>
   );
