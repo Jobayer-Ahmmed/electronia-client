@@ -3,6 +3,7 @@ import Slider from "../hero/Slider";
 import KitchenGadgets from "../kitchenGadgets/KitchenGadgets";
 import Laptop from "../laptop/Laptop";
 import Phone from "../phone/Phone";
+import Refrigerator from "../refrigerator/Refrigerator";
 import TechTrends from "../techTrends/TechTrends";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <Laptop/>
         <Phone/>
         <KitchenGadgets/>
+        <Refrigerator/>
       </div>
     </div>
   );
