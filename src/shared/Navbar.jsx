@@ -27,7 +27,10 @@ const Navbar = () => {
   const navlinks = (
     <>
       <li className="text-textColor">
-        <NavLink>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="text-textColor">
+        <NavLink to="/add-new-product">Add new product</NavLink>
       </li>
       <li className="text-textColor">
         <NavLink to="/login">Login</NavLink>

@@ -47,16 +47,16 @@ const Login = () => {
 
   return (
     <div
-      className="py-yPadding w-full flex justify-center "
+      className="my-myMargin w-full flex justify-center "
     >
-      <div className="p-10 border rounded-lg shadow-xl">
-        <h2 className="text-2xl font-medium pb-3 border-b mb-5">Login Now</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="p-10 shadow-xl bg-black  rounded-lg bg-opacity-20">
+        <h2 className="text-textColor text-2xl font-medium pb-3 border-b mb-5">Login Now</h2>
+        <form onSubmit={handleSubmit(onSubmit)} className=" ">
           <input
             {...register("email", { required: true })}
             placeholder="Email"
             type="email"
-            className="w-64 md:w-80 h-10 px-2 rounded"
+            className="w-64 md:w-80 h-10 px-2"
           />
           <br />
           {errors.email && (
@@ -89,10 +89,10 @@ const Login = () => {
           <input
             type="submit"
             value="Login"
-            className="mt-5 btn bg-cyan-800 text-white"
+            className="mt-5 btn text-black font-bold bg-gradient-to-r from-yellow-700 to-yellow-600"
           />
         </form>
-        <p className="mt-8">
+        <p className="mt-8 text-black">
           Dont&apos;t have an account?
           <Link className="underline" to="/register">
             Register now

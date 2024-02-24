@@ -95,8 +95,8 @@ const Register = () => {
 
 
   return (
-    <div className="py-yPadding flex justify-center " data-aos="fade-left">
-      <div className="p-10 border rounded-lg shadow-xl">
+    <div className="my-myMargin flex justify-center " data-aos="fade-left">
+      <div className="p-10 shadow-xl bg-black  rounded-lg bg-opacity-20">
         <h2 className="text-textColor text-2xl font-medium pb-3 border-b mb-5">
           Registraion Now
         </h2>
@@ -193,7 +193,7 @@ const Register = () => {
             <p className="text-red-700">{errors.email.message}</p>
           )}
           <br />
-          <p className="mt-2 -mb-6 text-white" htmlFor="">Insert Your Image</p>
+          <p className="mt-2 -mb-6 text-black" htmlFor="">Insert Your Image</p>
           <br />
           <input
             type="file"
@@ -207,10 +207,10 @@ const Register = () => {
           <input
             type="submit"
             value="Register"
-            className="mt-10 btn bg-cyan-800 text-white"
+            className="mt-5 btn text-black font-bold bg-gradient-to-r from-yellow-700 to-yellow-600"
           />
         </form>
-        <p className="mt-8">
+        <p className="mt-8 text-black">
           Already have an account?
           <Link className="underline" to="/login">
             Login now
