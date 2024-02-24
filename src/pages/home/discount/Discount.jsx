@@ -18,7 +18,7 @@ const Discount = () => {
     const changeColor = () => {
       gsap.to(discountRef.current, {
         backgroundImage: `linear-gradient(to left, ${colors[currentIndex]} 0%, ${colors[(currentIndex + 1) % colorCount]} 100%)`,
-        duration: 5, 
+        duration: 3, 
         onComplete: () => {
           currentIndex = (currentIndex + 1) % colorCount; // Increment index and loop back to 0 if it exceeds the length of the colors array
           changeColor(); // Recursive call to continue changing colors every second

@@ -12,7 +12,8 @@ export default {
         cardColor: "#72CA99",
         textColor: "#4b4f4f",
         cardTextColor: "#040A10",
-        priColor:"#969EA6"
+        priColor:"#969EA6",
+        borderColor: "rgb(203, 141, 9)"
 
 
  
