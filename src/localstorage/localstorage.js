@@ -1,9 +1,6 @@
 
-
-
-
 const getLocalstorageData = () => {
-    const data = localStorage.getItem("JasShopCart")
+    const data = localStorage.getItem("Cart")
     if (data) {
         const jsonData = JSON.parse(data)
         return jsonData
@@ -12,12 +9,12 @@ const getLocalstorageData = () => {
 }
 
 
-const setLocalstorageData = (cartId, type, image, size, available_number, price, feedback, piece,_id ) => {
-
+const setLocalstorageData = (cartId,product_name, image, price ) => {
+    console.log("I am in set Local storage")
     const getData = getLocalstorageData()
-    getData.push({ cartId, type, image, size, available_number, price, feedback, piece,_id  })
+    getData.push({cartId,product_name, image, price})
     const strData = JSON.stringify(getData)
-    localStorage.setItem("JasShopCart", strData)
+    localStorage.setItem("Cart", strData)
 }
 
 const removeLocalstorageData = (cartId) => {
@@ -29,7 +26,7 @@ const removeLocalstorageData = (cartId) => {
     getData = []
     getData.push(...updatedData)
     const str = JSON.stringify(getData)
-    localStorage.setItem("JasShopCart", str)
+    localStorage.setItem("Cart", str)
 
 }
 

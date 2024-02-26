@@ -9,10 +9,10 @@ const Home = () => {
     <div className="">
       <Slider />
       <div className="px-5 md:px-10 lg:px-20">
-        <Discount />
         <TechTrends />
-        <SecondaryHome/>
-        <Feedback/>
+        <Discount />
+        <SecondaryHome />
+        <Feedback />
       </div>
     </div>
   );

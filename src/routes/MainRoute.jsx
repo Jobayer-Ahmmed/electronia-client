@@ -10,6 +10,7 @@ import Refrigerator from "../pages/home/secondaryHome/refrigerator/Refrigerator"
 import KitchenGadgets from "../pages/home/secondaryHome/kitchenGadgets/KitchenGadgets";
 import Laptop from "../pages/home/secondaryHome/laptop/Laptop";
 import MonitorTV from "../pages/home/secondaryHome/monitorTV/MonitorTV";
+import Carts from "../pages/Cart/Carts";
 
 
 const router = createBrowserRouter([{
@@ -57,6 +58,10 @@ const router = createBrowserRouter([{
         {
             path:"/login",
             element:<Login/>
+        },
+        {
+            path:"/cart",
+            element:<Carts/>
         }
     ]
 }])
