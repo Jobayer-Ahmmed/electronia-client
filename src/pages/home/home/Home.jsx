@@ -1,12 +1,7 @@
-import AC from "../ac/AC";
 import Discount from "../discount/Discount";
 import Feedback from "../feedback/Feedback";
 import Slider from "../hero/Slider";
-import KitchenGadgets from "../kitchenGadgets/KitchenGadgets";
-import Laptop from "../laptop/Laptop";
-import MonitorTV from "../monitorTV/MonitorTV";
-import Phone from "../phone/Phone";
-import Refrigerator from "../refrigerator/Refrigerator";
+import SecondaryHome from "../secondaryHome/SecondaryHome";
 import TechTrends from "../techTrends/TechTrends";
 
 const Home = () => {
@@ -16,12 +11,7 @@ const Home = () => {
       <div className="px-5 md:px-10 lg:px-20">
         <Discount />
         <TechTrends />
-        <Laptop/>
-        <Phone/>
-        <KitchenGadgets/>
-        <Refrigerator/>
-        <AC/>
-        <MonitorTV/>
+        <SecondaryHome/>
         <Feedback/>
       </div>
     </div>

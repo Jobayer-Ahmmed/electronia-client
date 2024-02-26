@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAxios from "../../../hooks/useAxios/useAxios";
 
 const Feedback = () => {
   const [allData, setAllData] = useState([]);
   const rootAxios = useAxios();
 
-  rootAxios.get("/feedback").then((res) => setAllData(res.data));
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await rootAxios.get("/feedback");
+        setAllData(res.data);
+      } catch (err) {
+        console.log(`Error in feedback: ${err}`);
+      }
+    };
+    fetchData();
+  });
+
   return (
     <div className="my-myMargin text-gray-300">
       <h1 className="text-center mb-titleMargin text-2xl font-medium">

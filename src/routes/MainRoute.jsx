@@ -4,6 +4,12 @@ import Home from "../pages/home/home/Home";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import AddNewProduct from "../pages/addNewProduct/AddNewProduct";
+import AC from "./../pages/home/secondaryHome/ac/AC"
+import Phone from "../pages/home/secondaryHome/phone/Phone";
+import Refrigerator from "../pages/home/secondaryHome/refrigerator/Refrigerator";
+import KitchenGadgets from "../pages/home/secondaryHome/kitchenGadgets/KitchenGadgets";
+import Laptop from "../pages/home/secondaryHome/laptop/Laptop";
+import MonitorTV from "../pages/home/secondaryHome/monitorTV/MonitorTV";
 
 
 const router = createBrowserRouter([{
@@ -12,7 +18,33 @@ const router = createBrowserRouter([{
     children:[
         {
             path: "/",
-            element:<Home/>
+            element:<Home/>,
+            children:[
+                {
+                    path:"/ac",
+                    element:<AC/>
+                },
+                {
+                    path:"/phone",
+                    element:<Phone/>
+                },
+                {
+                    path:"/tv",
+                    element:<MonitorTV/>
+                },
+                {
+                    path:"/refrigerator",
+                    element:<Refrigerator/>
+                },
+                {
+                    path:"/kitchen",
+                    element:<KitchenGadgets/>
+                },
+                {
+                    path:"/laptop",
+                    element:<Laptop/>
+                }
+            ]
         },
         {
             path:"/add-new-product",

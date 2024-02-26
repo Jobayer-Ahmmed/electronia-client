@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import useAxios from "../../../hooks/useAxios/useAxios";
-import Card from "../../../shared/Card";
+import  {  useEffect, useState } from "react";
+import useAxios from "../../../../hooks/useAxios/useAxios";
+import Card from "../../../../shared/Card";
 
-const TechTrends = () => {
+const MonitorTV = () => {
   const [allData, setAllData] = useState([]);
   const [isBoolean, setIsBoolean] = useState(true);
   const rootAxios = useAxios();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await rootAxios.get("/tech-trends");
-        setAllData(res.data);
-      } catch (err) {
-        console.log(`Error in tech trends: ${err}`);
+  useEffect(()=>{
+    const fetchData= async()=>{
+      try{
+        const res = await rootAxios.get("/monitorTV")
+        setAllData(res.data)
+      } catch(err){
+        console.log(`Error in MonitorTV: ${err}`)
       }
-    };
-    fetchData();
-  }, []);
+    }
+    fetchData()
+  },[])
 
   return (
     <div className="my-myMargin">
       <h1 className="text-center mb-titleMargin text-cardTextColor text-2xl font-medium">
-        Trending Technology
+        Monitor & TV
       </h1>
       <Card allData={allData} flag={isBoolean} />
       <div className="flex justify-end pt-5  lg:pr-40">
@@ -37,4 +37,4 @@ const TechTrends = () => {
   );
 };
 
-export default TechTrends;
+export default MonitorTV;
