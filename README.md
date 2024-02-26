@@ -1,8 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features of Electronia(Project)
+- Localstorage is used for cart system un-authentication user
+- After authentication the cart data is stored in the database which was in localstorage
+- Form validation is included in this project
+- Whole project is responsive
+##### Technologies:
+- React.js, Tailwind CSS, Daisy UI, GSAP,React-hook-form, react-responsive-carousel, react-simple-captcha, Sweetalert2

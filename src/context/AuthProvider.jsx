@@ -49,10 +49,6 @@ const AuthProvider = ({ children }) => {
       const id = obj.cartId;
       obj.email = email;
       delete obj.cartId;
-      delete obj.available_number;
-      delete obj.feedback;
-      delete obj.piece;
-      delete obj._id;
 
       rootAxios
         .post(`/cart?email=${email}`, obj)

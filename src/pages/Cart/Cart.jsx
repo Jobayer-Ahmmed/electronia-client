@@ -6,9 +6,10 @@ import useAxios from "../../hooks/useAxios/useAxios";
 
 
 const Cart = ({data}) => {
+
   const { cartAddition, newUser} = useContext(Context);
   const rootAxios = useAxios()
-    const { cartId, image, price } = data
+    const {_id, cartId, image, price } = data
     const email = newUser?.email
     const handleRemoveCartItem=()=>{
       if(email){

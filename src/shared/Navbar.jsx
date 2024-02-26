@@ -4,19 +4,15 @@ import { ImCross } from "react-icons/im";
 import { useContext, useState } from "react";
 import { Context } from "../context/AuthProvider";
 import { TiShoppingCart } from "react-icons/ti";
-import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 import useCartData from "../hooks/useCartData/useCartData";
 import { getLocalstorageData } from "../localstorage/localstorage";
-import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
   const { newUser, logOut } = useContext(Context);
-  const [arrow, setArrow] = useState(false);
   const navigate = useNavigate();
   const cartDB = useCartData();
   const cartLocal = getLocalstorageData();
-
   const email = newUser?.email;
 
   const handleLogout = () => {
@@ -28,44 +24,16 @@ const Navbar = () => {
       <li className="text-textColor">
         <NavLink to="/">Home</NavLink>
       </li>
-
-      <li
-        className="add_product text-textColor lg:relative cursor-pointer"
-        onMouseEnter={() => setArrow(true)}
-        onMouseLeave={() => setArrow(false)}
-      >
-        Add new product{" "}
-        {arrow ? (
-          <BiUpArrow className="inline lg:text-xl text-black" />
-        ) : (
-          <BiDownArrow className="inline lg:text-xl text-black" />
-        )}
-        <ul className="w-max absolute lg:left-0 left-[165px] top-[60px] lg:top-full  rounded text-textColor p-2"
-         style={{ borderLeft: window.innerWidth < 768 ? "10px solid rgb(203, 141, 9)" : "none"}}
-        >
-          <li>
-            <NavLink>Add Laptop</NavLink>
-          </li>
-          <li>
-            <NavLink>Add Phone</NavLink>
-          </li>
-          <li>
-            <NavLink>Add TV & Monitor</NavLink>
-          </li>
-          <li>
-            <NavLink>Add AC</NavLink>
-          </li>
-          <li>
-            <NavLink>Add Kitchen Gadets</NavLink>
-          </li>
-        </ul>
-      </li>
-      <li className="text-textColor">
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li className="text-textColor">
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {!email && (
+        <li className="text-textColor">
+          <NavLink to="/login">Login</NavLink>
+        </li>
+      )}
+      {!email && (
+        <li className="text-textColor">
+          <NavLink to="/register">Register</NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -82,16 +50,14 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <span>
-          <p> logo</p>
+        <span className="logo text-4xl font-bold">
+         electronia
         </span>
       </div>
       <div>
         <ul
           className={`myNavItem bg-cardColor z-10 absolute top-[70px] lg:hidden  flex flex-col gap-3 rounded text-center p-5 font-medium ${
-            toggle
-              ? " -left-72 transition-[1] "
-              : "left-2  transition-[1]"
+            toggle ? " -left-72 transition-[1] " : "left-2  transition-[1]"
           }`}
           style={{
             background: "rgba(245,209,131,1)",

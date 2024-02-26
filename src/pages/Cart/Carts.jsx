@@ -4,45 +4,26 @@ import { Context } from "../../context/AuthProvider";
 import useCartData from "../../hooks/useCartData/useCartData";
 import { getLocalstorageData } from "../../localstorage/localstorage";
 
-
 const Carts = () => {
   const { newUser } = useContext(Context);
-  const [openCouponInput, setOpenCouponInput] = useState(false);
-  const [isTokenUsed, setIsTokenUsed] = useState(true);
   const [totalPriceDB, setTotalPriceDB] = useState(0);
-  const [discountPriceDB, setDiscountPriceDB] = useState(0);
   const [totalPriceLocal, setTotalPriceLocal] = useState(0);
-  const [copoun, setCopoun] = useState();
   const cartDB = useCartData();
   const cartLocal = getLocalstorageData();
   const email = newUser?.email;
 
-  console.log(cartLocal)
-
   useEffect(() => {
-    setTotalPriceDB(cartDB.reduce((sum, item) => sum + parseInt(item.price), 0));
+    setTotalPriceDB(
+      cartDB.reduce((sum, item) => sum + parseInt(item.price), 0)
+    );
     // console.log(totalPriceDB)
   }, [cartDB]);
 
   useEffect(() => {
-    setTotalPriceLocal(cartLocal.reduce((sum, item) => sum + parseInt(item.price), 0));
-  
-  }, [openCouponInput]);
-
-  const handleCoupon = () => {
-    setOpenCouponInput(true);
-  };
-  const handleCheckCopoun = () => {
-    if (copoun === "JASSHOP2024") {
-      if (email) {
-        setDiscountPriceDB(totalPriceDB * 0.7);
-      } else {
-        setTotalPriceLocal(totalPriceLocal * 0.7);
-      }
-
-      setIsTokenUsed(false);
-    }
-  };
+    setTotalPriceLocal(
+      cartLocal.reduce((sum, item) => sum + parseInt(item.price), 0)
+    );
+  }, [cartLocal]);
 
   return (
     <div className="min-h-[80vh] my-myMargin w-4/5 lg:w-3/5 mx-auto text-cardTextColor">
@@ -54,26 +35,6 @@ const Carts = () => {
         </div>
         <div className="w-4/5 md:w-[400px] ">
           <div className="w-full border-2 border-black rounded-lg py-8 px-4">
-            {!openCouponInput && (
-              <button onClick={handleCoupon} className="btn">
-                Use Coupon
-              </button>
-            )}
-            {openCouponInput && isTokenUsed && (
-              <div className="flex gap-3">
-                <input
-                  className="w-24 "
-                  onChange={(e) => setCopoun(e.target.value)}
-                  type="text"
-                />
-                <button
-                  className="text-xl btn btn-sm"
-                  onClick={handleCheckCopoun}
-                >
-                  use
-                </button>
-              </div>
-            )}
             <p className="text-xl my-3">
               Total Item:{" "}
               <span className="font-bold">
@@ -83,13 +44,8 @@ const Carts = () => {
             <p className="text-xl">
               Total Price:{" "}
               <span className="font-bold">
-                
-                {email
-                  ? discountPriceDB
-                    ? discountPriceDB
-                    : totalPriceDB
-                  : totalPriceLocal}
-                  {" "}TK
+                {email? totalPriceDB: totalPriceLocal}{" "}
+                TK
               </span>
             </p>
           </div>
