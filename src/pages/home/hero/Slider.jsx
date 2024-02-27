@@ -2,7 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import s1 from "../../../assets/slider-Images/s1.jpg"
 import s2 from "../../../assets/slider-Images/s2.jpg"
-import s3 from "../../../assets/slider-Images/s3.png"
+import s3 from "../../../assets/slider-Images/s3.jpg"
 import s4 from "../../../assets/slider-Images/s4.jpg"
 
 
