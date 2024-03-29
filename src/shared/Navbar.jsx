@@ -50,9 +50,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <span className="logo text-4xl font-bold">
-         electronia
-        </span>
+        <span className="logo text-4xl font-bold">electronia</span>
       </div>
       <div>
         <ul
@@ -88,7 +86,12 @@ const Navbar = () => {
       </div>
 
       {newUser?.displayName ? (
-        <div className="dropdown dropdown-end">
+        <div
+          className="dropdown dropdown-end"
+          style={{
+            background: "rgba(245,209,131,1)",
+          }}
+        >
           <div tabIndex={0} role="button">
             <img
               className="btn btn-circle w-12 h-12 rounded-full"

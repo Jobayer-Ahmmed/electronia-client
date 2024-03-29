@@ -21,8 +21,10 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [cartAddCount, setCartAddCount] = useState(0);
   const [cartArray, setCartArray] = useState([]);
+  const [checkOutPrice, setCheckOutPrice] = useState(0)
   const rootAxios = useAxios();
   const localData = getLocalstorageData();
+
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -61,6 +63,12 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const handleCheckOutPrice = (price) =>{
+    console.log(price)
+    setCheckOutPrice(price)
+  }
+  
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (myCurrentUser) => {
       setLoading(false);
@@ -79,6 +87,8 @@ const AuthProvider = ({ children }) => {
     cartAddCount,
     cartArray,
     postLocalDataInDB,
+    handleCheckOutPrice,
+    checkOutPrice
   };
 
   return <Context.Provider value={contextData}>{children}</Context.Provider>;

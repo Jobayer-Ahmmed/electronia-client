@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { TbEye, TbEyeClosed } from "react-icons/tb";
 import { Context } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,6 +10,9 @@ const Login = () => {
   const [passwordTrigger, setPasswordTrigger] = useState(false);
   const navigate = useNavigate()
   const {login, postLocalDataInDB} = useContext(Context)
+  const location = useLocation()
+
+  console.log(location?.state)
 
   const {
     register,
@@ -31,8 +34,12 @@ const Login = () => {
         showConfirmButton: false,
         timer: 1500
       })
-
-      navigate("/")
+      if(location?.state){
+        if(location?.state === "/check_out")
+        navigate("/cart")
+      }
+      else
+      navigate(location?.state ? location?.state: '/')
     })
   };
 

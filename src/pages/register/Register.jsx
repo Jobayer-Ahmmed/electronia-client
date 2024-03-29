@@ -63,13 +63,12 @@ const Register = () => {
                 });
               }
 
-              // pushing data in database
             });
         })
         .catch(err=>console.log(err))
 
     } else {
-      // setIsConfirm(true);
+
       console.log("Password doesnt match");
     }
   };

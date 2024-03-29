@@ -3,19 +3,22 @@ import Cart from "./Cart";
 import { Context } from "../../context/AuthProvider";
 import useCartData from "../../hooks/useCartData/useCartData";
 import { getLocalstorageData } from "../../localstorage/localstorage";
+import { Link } from "react-router-dom";
 
 const Carts = () => {
-  const { newUser } = useContext(Context);
+  const { newUser, handleCheckOutPrice } = useContext(Context);
   const [totalPriceDB, setTotalPriceDB] = useState(0);
   const [totalPriceLocal, setTotalPriceLocal] = useState(0);
   const cartDB = useCartData();
   const cartLocal = getLocalstorageData();
   const email = newUser?.email;
 
+
   useEffect(() => {
     setTotalPriceDB(
       cartDB.reduce((sum, item) => sum + parseInt(item.price), 0)
     );
+    // handleCheckOutPrice(totalPriceDB)
     // console.log(totalPriceDB)
   }, [cartDB]);
 
@@ -48,6 +51,9 @@ const Carts = () => {
                 TK
               </span>
             </p>
+            {
+              (cartDB.length || totalPriceLocal)?<Link className="btn btn-sm btn-outline text-black text-xl mt-8" onClick={()=>handleCheckOutPrice(totalPriceDB)} to="/check_out">Check Out</Link>: ''
+            }
           </div>
         </div>
       </div>

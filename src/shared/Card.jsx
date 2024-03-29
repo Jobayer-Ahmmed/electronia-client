@@ -70,17 +70,19 @@ const RenderCard = ({ data }) => {
   const { cartAddition, newUser } = useContext(Context);
   const email = newUser?.email;
   const rootAxios = useAxios();
-  const { _id, product_name, image, price } = data;
+  const {  product_name, image, price } = data;
   const cartId =  new Date().getTime();
 
  
-  const cartDataObj= {product_name, image, price}
+  const cartDataObj= {email,product_name, image, price}
   const handleCart= () => {
     if(email){
+      // console.log(cartDataObj)
+      console.log("I am in handleCart in cartDB")
       rootAxios.post("/cart", cartDataObj)
       .then(res=>console.log(res))
     } else{
-      console.log("I am in before setLocalStorage")
+      // console.log("I am in before setLocalStorage")
       setLocalstorageData(cartId,product_name, image, price );
       
     }
