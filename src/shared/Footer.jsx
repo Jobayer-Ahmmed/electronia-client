@@ -3,12 +3,17 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import logo from "../assets/logo/logo.png"
 
 const Footer = () => {
   return (
     <footer className="bg-base-300  px-5 md:px-20 lg:px-40 py-20 ">
       <div className="flex justify-center mb-20">
-      <span className="logo text-4xl font-bold">electronia</span>
+              {/* logo */}
+              <div className="flex items-center justify-center">
+          <img className="w-12" src={logo} alt="" />
+        <span className="logo text-2xl font-bold">electronia</span>
+        </div>
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-center md:gap-40 lg:gap-96">
         <div className="text-center md:text-left">

@@ -6,6 +6,7 @@ import { Context } from "../context/AuthProvider";
 import { TiShoppingCart } from "react-icons/ti";
 import useCartData from "../hooks/useCartData/useCartData";
 import { getLocalstorageData } from "../localstorage/localstorage";
+import logo from "../assets/logo/logo.png"
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
@@ -50,7 +51,12 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <span className="logo text-4xl font-bold">electronia</span>
+        {/* logo */}
+        <div className="flex items-center justify-center">
+          <img className="w-12" src={logo} alt="" />
+        <span className="logo text-2xl font-bold">electronia</span>
+        </div>
+        
       </div>
       <div>
         <ul

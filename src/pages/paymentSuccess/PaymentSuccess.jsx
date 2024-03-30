@@ -1,12 +1,15 @@
+import { Context } from "../../context/AuthProvider"
 import useAxios from "../../hooks/useAxios/useAxios"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 
 
 const PaymentSuccess = () => {
+    const {newUser} = useContext(Context)
     const rootAxios = useAxios()
+    const email = newUser?.email
 
     useEffect(()=>{
-        rootAxios.delete("/cart_empty")
+        rootAxios.delete(`/cart_empty?email=${email}`)
         .then(()=>console.log("cart empty"))
     },[])
 

@@ -3,5 +3,6 @@
 - After authentication the cart data is stored in the database which was in localstorage
 - Form validation is included in this project
 - Whole project is responsive
+- UddoktaPay payment system is included in the last update
 ##### Technologies:
 - React.js, Tailwind CSS, Daisy UI, GSAP,React-hook-form, react-responsive-carousel, react-simple-captcha, Sweetalert2
