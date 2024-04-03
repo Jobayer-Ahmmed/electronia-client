@@ -2,12 +2,14 @@ import { useSearchParams } from "react-router-dom"
 import { Context } from "../../context/AuthProvider"
 import useAxios from "../../hooks/useAxios/useAxios"
 import { useContext, useEffect, useState } from "react"
+import Swal from "sweetalert2"
 
 
 const PaymentSuccess = () => {
     const {newUser} = useContext(Context)
     const [searchParams] = useSearchParams();
     const [paymentVerificationData, setPaymentVerificationData] = useState({})
+    const [tnxId, setTnxId] = useState()
     const [foundTnxId, setFoundTnxId] = useState()
     const [msg, setMsg] = useState('')
     const rootAxios = useAxios()
@@ -29,18 +31,19 @@ const PaymentSuccess = () => {
       rootAxios.post(`/verify-payment?invoice_id=${invoiceId}`)
       .then(res=>{
         setPaymentVerificationData(res.data)
+        setTnxId(res.data.transaction_id)
 
       })
-    },[invoiceId])
+    },[invoiceId, rootAxios])
 
     useEffect(()=>{
 
-      if(paymentVerificationData.transaction_id){
-        rootAxios.get(`/bill?transaction_id=${paymentVerificationData.transaction_id}`)
+      if(tnxId){
+        rootAxios.get(`/bill?transaction_id=${tnxId}`)
         .then(res=>setFoundTnxId(res.data.transaction_id))
       }
 
-    },[rootAxios])
+    },[rootAxios,tnxId, foundTnxId])
 
     const handlePaymentInfo =()=>{
       const {full_name, email, amount, sender_number, transaction_id, date} = paymentVerificationData
@@ -51,7 +54,13 @@ const PaymentSuccess = () => {
         setMsg("You have already saved")
       } else{       
         rootAxios.post("/bill", billData)
-        .then(res=>console.log(res))
+        .then(()=>{
+          Swal.fire({
+            icon: "success",
+            title: "To see your bill info. Tap your image on navbar.",
+          });
+          
+        })
       }
 
     }
