@@ -110,6 +110,7 @@ const Navbar = () => {
             className="dropdown-content z-[1] text-lg menu py-4 pl-10 shadow bg-base-100 rounded-box w-52"
           >
             <li>{newUser.displayName}</li>
+            <li className="cursor-pointer" onClick={()=>navigate("/bill_info")}>Bill Info</li>
             <li onClick={handleLogout} className="cursor-pointer mt-3">
               Log Out
             </li>

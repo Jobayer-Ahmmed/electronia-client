@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const handleCheckOutPrice = (price) =>{
-    console.log(price)
+    // console.log(price)
     setCheckOutPrice(price)
   }
   

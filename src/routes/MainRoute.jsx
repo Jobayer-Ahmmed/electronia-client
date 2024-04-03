@@ -14,6 +14,7 @@ import CheckOut from "../pages/checkOut/CheckOut";
 import PaymentSuccess from "../pages/paymentSuccess/PaymentSuccess";
 import PrivateRoute from "./PrivateRoute";
 import PaymentCancel from "../pages/paymentCancel/PaymentCancel";
+import BillInfo from "../pages/billInfo/BillInfo";
 
 
 const router = createBrowserRouter([{
@@ -74,6 +75,10 @@ const router = createBrowserRouter([{
         {
             path:"/cancel",
             element:<PrivateRoute><PaymentCancel/></PrivateRoute> 
+        },
+        {
+            path:"/bill_info",
+            element:<PrivateRoute><BillInfo/></PrivateRoute>
         }
     ]
 }])

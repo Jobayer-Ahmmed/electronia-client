@@ -78,7 +78,7 @@ const RenderCard = ({ data }) => {
   const handleCart= () => {
     if(email){
       // console.log(cartDataObj)
-      console.log("I am in handleCart in cartDB")
+      // console.log("I am in handleCart in cartDB")
       rootAxios.post("/cart", cartDataObj)
       .then(res=>console.log(res))
     } else{

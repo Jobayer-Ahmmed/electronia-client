@@ -20,7 +20,10 @@ const CheckOut = () => {
   const onSubmit = (data) => {
     rootAxios.post("/payment", data)
     .then(res=>{
+
+
       window.location.href = res.data.payment_url;
+
     })
   }
 

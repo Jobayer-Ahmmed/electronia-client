@@ -4,5 +4,6 @@
 - Form validation is included in this project
 - Whole project is responsive
 - UddoktaPay payment system is included in the last update
+- After completing the payment, user can see his/her bill info and he can save bill info. User can check his/her bill info on tap user image. 
 ##### Technologies:
 - React.js, Tailwind CSS, Daisy UI, GSAP,React-hook-form, react-responsive-carousel, react-simple-captcha, Sweetalert2
